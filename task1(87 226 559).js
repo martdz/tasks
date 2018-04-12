@@ -10,16 +10,13 @@ class Num{
 		return this.n.toString().split("").reverse().filter((item, i) => i < this.m).reduce((cur, next) => +cur + +next);
 	}
 	commonMultiple(){
-	let arrN = [];
-        let arrM = [];
-        for(let i = this.n; i < this.n*this.m; i += this.n){
-            arrN.push(i);
+		let arr = [];
+        for(let i = 1; i < this.n*this.m; i++){
+            if(i % this.n == 0 && i % this.m == 0){
+				arr.push(i);
+			}
         }
-        for(let j = this.m; j < this.n*this.m; j += this.m){
-            arrM.push(j);
-        }
-        return arrN.filter(val => arrM.indexOf(val) !== -1);
-	
+        return arr;
 	}
 	mersenNumbers(){
         let simple = [];
