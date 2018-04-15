@@ -1,4 +1,4 @@
-//87 225 559
+//87 226 559
 
 class Num{
 	constructor(n, m){
@@ -9,6 +9,19 @@ class Num{
 		if(this.m > this.n.toString().length) return false;
 		return this.n.toString().split("").reverse().filter((item, i) => i < this.m).reduce((cur, next) => +cur + +next);
 	}
+    sumNumbers2() {
+        let count = m;
+        let sum = 0;
+        let rep = 0;
+        while(count > 0){
+            sum += n%10;
+            n = parseInt(n/10);
+            count -= 1;
+        if(n==0){rep += 1;}
+            if(rep > 1){return false;}
+        }
+        return sum;
+    }
 	commonMultiple(){
 		let arr = [];
         for(let i = 1; i < this.n*this.m; i++){
